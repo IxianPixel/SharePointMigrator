@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SharePointMigrator.Pages.Migrate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Margin="{StaticResource SplitLeft}">
+            <DockPanel Margin="0,0,5,0" LastChildFill="False">
+                <Label DockPanel.Dock="Top">Site URL</Label>
+                <TextBox DockPanel.Dock="Top" Name="SiteUrl"></TextBox>
+
+                <Label DockPanel.Dock="Top">Folder To Copy</Label>
+                <TextBox DockPanel.Dock="Top" Name="Folder"></TextBox>
+
+                <Label DockPanel.Dock="Top">Username</Label>
+                <TextBox DockPanel.Dock="Top" Name="Username"></TextBox>
+
+                <Label DockPanel.Dock="Top">Password</Label>
+                <PasswordBox DockPanel.Dock="Top" Name="Password"></PasswordBox>
+
+                <Button DockPanel.Dock="Bottom" Margin="0, 5, 0, 0" Name="Go" Click="Go_Click">Migrate</Button>
+            </DockPanel>
+        </ScrollViewer>
+        <GridSplitter Grid.Column="1" />
+        <ScrollViewer Grid.Column="2 " Margin="{StaticResource SplitRight}">
+            <StackPanel>
+                <TextBlock FontWeight="Bold">Migration Progress</TextBlock>
+                <StackPanel Margin="0,10,0,0">
+                    <ProgressBar Name="FolderProgress" Height="10" />
+                    <TextBlock Name="FolderProgressValue">0/0 Folders Created</TextBlock>
+                </StackPanel>
+                
+                <StackPanel Margin="0,10,0,0">
+                    <ProgressBar Name="FileProgress" Height="10" />
+                    <TextBlock Name="FileProgressValue">0/0 Files Uploaded</TextBlock>
+                </StackPanel>
+            
+                <TextBlock FontWeight="Bold"  Margin="0, 10, 0, 0">Message Log</TextBlock>
+                <ListBox Name="MessageLog">
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

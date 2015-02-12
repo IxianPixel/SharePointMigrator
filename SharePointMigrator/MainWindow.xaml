@@ -1,0 +1,20 @@
+﻿<mui:ModernWindow x:Class="SharePointMigrator.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+  Title="SharePoint Migrator" Height="600" Width="1000"
+  IsTitleVisible="True"
+  ContentSource="/Pages/Migrate.xaml">
+
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="SharePoint Migrator" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Migrate" Source="/Pages/Migrate.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+
+    <mui:ModernWindow.TitleLinks>
+        <mui:Link DisplayName="about" Source="/Pages/About.xaml" />
+    </mui:ModernWindow.TitleLinks>
+</mui:ModernWindow>
